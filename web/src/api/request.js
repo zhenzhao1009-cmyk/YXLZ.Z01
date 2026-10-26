@@ -22,7 +22,7 @@ request.interceptors.response.use(
     if (status === 401) {
       localStorage.removeItem(STORAGE_KEY);
       if (!location.pathname.startsWith('/login')) {
-        location.href = `/login?redirect=${encodeURIComponent(location.pathname + location.search)}`;
+        location.href = `${import.meta.env.BASE_URL}#/login`;
       }
     }
     return Promise.reject(err);

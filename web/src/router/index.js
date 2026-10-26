@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import { auth } from '../store/auth';
 
 // 可见角色:'admin' 代表管理层(president / advisor / super_admin)
@@ -25,7 +25,7 @@ const routes = [
   { path: '/:pathMatch(.*)*', component: () => import('../views/NotFoundView.vue') },
 ];
 
-const router = createRouter({ history: createWebHistory(), routes });
+const router = createRouter({ history: createWebHashHistory(import.meta.env.BASE_URL), routes });
 
 // 守卫:白名单 /login;未登录跳登录(带 redirect);角色不符跳首页(体验层,真正防线在 API)
 router.beforeEach((to) => {
