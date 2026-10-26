@@ -1,0 +1,12 @@
+{
+  "name": "health-club-system",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:server": "npm --prefix server run dev",
+    "dev:web": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "start": "npm --prefix server run start",
+    "test": "npm --prefix server test"
+  }
+}
